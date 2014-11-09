@@ -54,6 +54,3 @@ todo.view = function() {
         ])
     ]);
 };
-
-//initialize the application
-m.module(document, todo);
