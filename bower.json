@@ -1,0 +1,25 @@
+{
+  "name": "mithril-polymer-examples",
+  "version": "0.0.0",
+  "homepage": "https://github.com/michelmattos/mithril-polymer-examples",
+  "authors": [
+    "Michel Mattos <mattos.michel@gmail.com>"
+  ],
+  "description": "A list of webapp examples using Mithril and Polymer.",
+  "keywords": [
+    "mithril",
+    "polymer",
+    "web components"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "mithril": "~0.1.22"
+  }
+}
