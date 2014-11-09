@@ -1,0 +1,27 @@
+{
+  "name": "mithril-polymer-examples",
+  "version": "0.0.0",
+  "description": "A list of webapp examples using Mithril and Polymer.",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/michelmattos/mithril-polymer-examples.git"
+  },
+  "keywords": [
+    "mithril",
+    "polymer",
+    "web components"
+  ],
+  "author": "Michel Mattos",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/michelmattos/mithril-polymer-examples/issues"
+  },
+  "homepage": "https://github.com/michelmattos/mithril-polymer-examples",
+  "devDependencies": {
+    "gulp": "^3.8.10",
+    "gulp-jasmine": "^1.0.1"
+  }
+}
