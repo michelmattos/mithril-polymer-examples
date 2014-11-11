@@ -1,0 +1,30 @@
+<link rel="stylesheet" href="../../bower_components/polymer/polymer.html">
+
+<polymer-element name="x-task" attributes="description done oncomplete">
+	<template>
+		<div>
+			<input id="check" type="checkbox" checked="{{done}}">
+			<span>{{description}}</span>
+		</div>
+	</template>
+	<script>
+		Polymer({
+			oncomplete: function() {},
+			publish: {
+				description: { value: '', reflect: true },
+				done: { value: false, reflect: true }
+			},
+			ready: function() {
+				this.addEventListener('click', function() {
+					this.complete(!this.done);
+				});
+				this.addEventListener('complete', oncomplete);
+			},
+			complete: function(done) {
+				if (this.done == done) return;
+				this.done = done;
+				this.fire('complete', done);
+			}
+		});
+	</script>
+</polymer-element>

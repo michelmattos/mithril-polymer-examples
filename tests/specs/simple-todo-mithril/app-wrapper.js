@@ -5,6 +5,6 @@
 var fs = require('fs'),
     vm = require('vm');
 
-vm.runInThisContext(fs.readFileSync(__dirname+'/../../../src/simple-todo/app.js'));
+vm.runInThisContext(fs.readFileSync(__dirname+'/../../../src/simple-todo-mithril/app.js'));
 
 module.exports = todo;
