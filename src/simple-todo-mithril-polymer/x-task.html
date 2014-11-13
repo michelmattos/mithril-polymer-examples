@@ -1,29 +1,28 @@
-<link rel="stylesheet" href="../../bower_components/polymer/polymer.html">
+<link rel="import" href="../../bower_components/polymer/polymer.html">
 
-<polymer-element name="x-task" attributes="description done oncomplete">
+<polymer-element name="x-task" attributes="description done ondone" on-click="{{toggleDone}}">
 	<template>
 		<div>
 			<input id="check" type="checkbox" checked="{{done}}">
-			<span>{{description}}</span>
+			<span id="desc">{{description}}</span>
 		</div>
 	</template>
 	<script>
 		Polymer({
-			oncomplete: function() {},
+			ondone: function() {},
 			publish: {
 				description: { value: '', reflect: true },
 				done: { value: false, reflect: true }
 			},
 			ready: function() {
-				this.addEventListener('click', function() {
-					this.complete(!this.done);
+				this.addEventListener('done', function(e) {
+					this.ondone(e);
 				});
-				this.addEventListener('complete', oncomplete);
 			},
-			complete: function(done) {
-				if (this.done == done) return;
-				this.done = done;
-				this.fire('complete', done);
+			toggleDone: function() {
+				this.done = !this.done;
+				this.$.desc.style.textDecoration = this.done ? 'line-through' : '';
+				this.fire('done', this.done);
 			}
 		});
 	</script>

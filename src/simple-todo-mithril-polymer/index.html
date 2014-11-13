@@ -5,5 +5,7 @@
 <link rel="import" href="x-task.html">
 <script>
 	//initialize the application
-	m.module(document, todo);
+	window.addEventListener('polymer-ready', function() {
+		m.module(wrap(document), todo);
+	});
 </script>

@@ -41,14 +41,13 @@ todo.view = function() {
         m("body", [
             m("input", {onchange: m.withAttr("value", todo.vm.description), value: todo.vm.description()}),
             m("button", {onclick: todo.vm.add}, "Add"),
-            m("table", [
+            m("div", [
                 todo.vm.list.map(function(task, index) {
-                    return m("tr", [
-                        m("td", [
-                            m("input[type=checkbox]", {onclick: m.withAttr("checked", task.done), checked: task.done()})
-                        ]),
-                        m("td", {style: {textDecoration: task.done() ? "line-through" : "none"}}, task.description()),
-                    ])
+                    return m("x-task", {
+                        description: task.description(),
+                        done: task.done(),
+                        ondone: m.withAttr("done", task.done)
+                    })
                 })
             ])
         ])
